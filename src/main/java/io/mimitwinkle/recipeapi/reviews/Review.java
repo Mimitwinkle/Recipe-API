@@ -1,4 +1,4 @@
-package io.mimitwinkle.recipes;
+package io.mimitwinkle.recipeapi.reviews;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

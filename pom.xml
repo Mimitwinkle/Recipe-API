@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.mimitwinkle</groupId>
-	<artifactId>recipes</artifactId>
+	<artifactId>recipeapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>recipes</name>
+	<name>recipeapi</name>
 	<description>A simple recipe API</description>
 	<properties>
 		<java.version>17</java.version>
