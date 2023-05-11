@@ -26,19 +26,9 @@ public class Recipe {
     private int cooktime;
     private int servings;
     private String comments;
-    // Database contains nutritional info, but I won't include this in the MVP
-//    private int calories;
-//    private int fat;
-//    private int satfat;
-//    private int carbs;
-//    private int fiber;
-//    private int sugar;
-//    private int protein;
     private String instructions;
     private List<String> ingredients;
     private List<String> tags;
     @DocumentReference
     private List<Review> reviewIds;
-
-
 }
