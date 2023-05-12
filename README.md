@@ -14,6 +14,7 @@ This API interacts with recipes and recipe reviews from a MongoDB database
   <li>Java</li>
   <li>Spring Boot</li>
   <li>MongoDB</li>
+  <li>Recipe data from (tabatkins's repository)[https://github.com/tabatkins/recipe-db]</li>
 </ul>
 
 ## Guide
@@ -34,3 +35,5 @@ This API interacts with recipes and recipe reviews from a MongoDB database
     "created": "2023-05-12T02:06:55.271"
 }
 ```
+## Database Setup
+The raw data that I used in my MongoDB database can be found in the 'data' directory of this project.
