@@ -10,12 +10,10 @@ This API interacts with recipes and recipe reviews from a MongoDB database
 </ul>
 
 ### Built with:
-<ul>
-  <li>Java</li>
-  <li>Spring Boot</li>
-  <li>MongoDB</li>
-  <li>Recipe data from (tabatkins's repository)[https://github.com/tabatkins/recipe-db]</li>
-</ul>
+- Java
+- Spring Boot
+- MongoDB
+- Recipe data from [tabatkins's repository](https://github.com/tabatkins/recipe-db)
 
 ## Guide
 ### Get all recipes
