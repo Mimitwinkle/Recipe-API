@@ -1,7 +1,6 @@
 package io.mimitwinkle.recipeapi.reviews;
 
 import io.mimitwinkle.recipeapi.recipes.Recipe;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -18,7 +17,7 @@ public class ReviewService {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    public Optional<Review> getReviewById(ObjectId id) {
+    public Optional<Review> getReviewById(String id) {
         return reviewRepository.findReviewById(id);
     }
 
@@ -33,7 +32,7 @@ public class ReviewService {
         return review;
     }
 
-    public void deleteReviewById(ObjectId id) {
+    public void deleteReviewById(String id) {
         reviewRepository.deleteReviewById(id);
     }
 }

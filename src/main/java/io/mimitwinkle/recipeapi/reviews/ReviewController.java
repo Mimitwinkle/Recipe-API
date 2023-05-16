@@ -1,6 +1,5 @@
 package io.mimitwinkle.recipeapi.reviews;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,7 @@ public class ReviewController {
     private ReviewService reviewService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Review>> getReviewById(@PathVariable ObjectId id) {
+    public ResponseEntity<Optional<Review>> getReviewById(@PathVariable String id) {
         return new ResponseEntity<Optional<Review>>(reviewService.getReviewById(id), HttpStatus.OK);
     }
 
@@ -31,7 +30,7 @@ public class ReviewController {
     }
 
     @DeleteMapping("/{id}")
-    public HttpStatus deleteReviewById(@PathVariable ObjectId id) {
+    public HttpStatus deleteReviewById(@PathVariable String id) {
         reviewService.deleteReviewById(id);
         return HttpStatus.OK;
     }
