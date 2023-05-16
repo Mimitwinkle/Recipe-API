@@ -6,6 +6,7 @@ This API interacts with recipes and recipe reviews from a MongoDB database
 <ul>
   <li>Access all recipes in the database</li>
   <li>Find recipe by ID</li>
+  <li>Find recipes by tag(s)</li>
   <li>Create reviews for recipes</li>
 </ul>
 
@@ -23,11 +24,15 @@ This API interacts with recipes and recipe reviews from a MongoDB database
 **GET** `http://localhost:8080/api/v1/recipes/{id}`
 
 ### Get recipes by tag(s)
-GET `http://localhost:8080/api/v1/recipes/tags?tags={tag1},{tag2}`
+**GET** `http://localhost:8080/api/v1/recipes/tags?tags={tag1},{tag2}`
 <br><br>
 This will return all recipes that contain both tag1 and tag2.
 
-Example response body:
+**Example:** 
+
+Request: `http://localhost:8080/api/v1/recipes/tags?tags=main,soup`
+
+Response body:
 ```
 {
     "id": {
