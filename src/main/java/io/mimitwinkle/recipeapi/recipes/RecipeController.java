@@ -1,13 +1,9 @@
 package io.mimitwinkle.recipeapi.recipes;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,6 +22,11 @@ public class RecipeController {
     @GetMapping("/{recipeId}")
     public ResponseEntity<Optional<Recipe>> getRecipeById(@PathVariable String recipeId) {
         return new ResponseEntity<Optional<Recipe>>(recipeService.getRecipeById(recipeId), HttpStatus.OK);
+    }
+
+    @GetMapping("/tags")
+    public ResponseEntity<Optional<List<Recipe>>> getRecipesByTags(@RequestParam("tags") List<String> tags) {
+        return new ResponseEntity<Optional<List<Recipe>>>(recipeService.getRecipesByTags(tags), HttpStatus.OK);
     }
 
 }

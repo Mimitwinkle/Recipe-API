@@ -1,6 +1,5 @@
 package io.mimitwinkle.recipeapi.recipes;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +16,9 @@ public class RecipeService {
 
     public Optional<Recipe> getRecipeById(String id) {
         return recipeRepository.findRecipeByRecipeId(id);
+    }
+
+    public Optional<List<Recipe>> getRecipesByTags(List<String> tags) {
+        return recipeRepository.findByTagsIn(tags);
     }
 }
