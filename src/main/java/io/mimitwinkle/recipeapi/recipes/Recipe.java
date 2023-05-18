@@ -31,4 +31,19 @@ public class Recipe {
     private List<String> tags;
     @DocumentReference
     private List<Review> reviewIds;
+
+    public Recipe(String recipeId, String name, String source, int preptime, int waittime, int cooktime, int servings, String comments, String instructions, List<String> ingredients, List<String> tags, List<Review> reviewIds) {
+        this.recipeId = recipeId;
+        this.name = name;
+        this.source = source;
+        this.preptime = preptime;
+        this.waittime = waittime;
+        this.cooktime = cooktime;
+        this.servings = servings;
+        this.comments = comments;
+        this.instructions = instructions;
+        this.ingredients = ingredients;
+        this.tags = tags;
+        this.reviewIds = reviewIds;
+    }
 }

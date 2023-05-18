@@ -21,8 +21,8 @@ public class ReviewService {
         return reviewRepository.findReviewById(id);
     }
 
-    public Review createReview(String reviewBody, String username, LocalDateTime created, String recipeId) {
-        Review review = reviewRepository.insert(new Review(reviewBody, username, created));
+    public Review createReview( String recipeId, String username, int rating, String reviewBody, LocalDateTime created) {
+        Review review = reviewRepository.insert(new Review(reviewBody, username, rating, created));
 
         mongoTemplate.update(Recipe.class)
                 .matching(Criteria.where("recipeId").is(recipeId))
@@ -32,7 +32,18 @@ public class ReviewService {
         return review;
     }
 
+    public Review updateReview(String id, int rating, String reviewBody, LocalDateTime updated) {
+        Review review = reviewRepository.findReviewById(id).orElseThrow();
+        review.setRating(rating);
+        review.setBody(reviewBody);
+        review.setLastUpdated(updated);
+
+        return reviewRepository.save(review);
+    }
+
     public void deleteReviewById(String id) {
         reviewRepository.deleteReviewById(id);
     }
+
+
 }

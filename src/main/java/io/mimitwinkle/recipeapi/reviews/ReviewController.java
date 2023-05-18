@@ -23,10 +23,22 @@ public class ReviewController {
     @PostMapping
     public ResponseEntity<Review> createReview(@RequestBody Map<String, String> payload) {
         return new ResponseEntity<Review>(reviewService.createReview(
-                payload.get("reviewBody"),
+                payload.get("recipeId"),
                 payload.get("username"),
-                LocalDateTime.parse(payload.get("created")),
-                payload.get("recipeId")), HttpStatus.CREATED);
+                Integer.parseInt(payload.get("rating")),
+                payload.get("reviewBody"),
+                LocalDateTime.parse(payload.get("created"))
+        ), HttpStatus.CREATED);
+    }
+
+    @PatchMapping
+    public ResponseEntity<Review> updateReview(@RequestBody Map<String, String> payload) {
+        return new ResponseEntity<Review>(reviewService.updateReview(
+                payload.get("id"),
+                Integer.parseInt(payload.get("rating")),
+                payload.get("reviewBody"),
+                LocalDateTime.parse(payload.get("updated"))
+        ), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
