@@ -9,6 +9,7 @@ This API interacts with recipes and recipe reviews from a MongoDB database
   <li>Find recipes by tag(s)</li>
   <li>Create reviews for recipes</li>
   <li>Update reviews</li>
+  <li>Delete reviews</li>
 </ul>
 
 ### Built with:
@@ -87,5 +88,9 @@ Response body:
     "updated": "2023-05-18T02:05:16.000"
 }
 ```
+
+### Delete review by id
+**DELETE** `http://localhost:8080/api/v1/reviews/{id}`
+
 ## Database Setup
 The raw data that I used in my MongoDB database can be found in the 'data' directory of this project.

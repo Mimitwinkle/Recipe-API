@@ -23,10 +23,10 @@ public class Review {
     private LocalDateTime created;
     private LocalDateTime lastUpdated;
 
-    public Review(String body, String username, int rating, LocalDateTime created) {
-        this.body = body;
+    public Review(String username, int rating, String body, LocalDateTime created) {
         this.username = username;
         this.rating = rating;
+        this.body = body;
         this.created = created;
     }
 }

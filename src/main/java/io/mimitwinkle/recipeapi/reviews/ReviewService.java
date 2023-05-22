@@ -21,8 +21,8 @@ public class ReviewService {
         return reviewRepository.findReviewById(id);
     }
 
-    public Review createReview( String recipeId, String username, int rating, String reviewBody, LocalDateTime created) {
-        Review review = reviewRepository.insert(new Review(reviewBody, username, rating, created));
+    public Review createReview(String recipeId, String username, int rating, String reviewBody, LocalDateTime created) {
+        Review review = reviewRepository.insert(new Review(username, rating, reviewBody, created));
 
         mongoTemplate.update(Recipe.class)
                 .matching(Criteria.where("recipeId").is(recipeId))
